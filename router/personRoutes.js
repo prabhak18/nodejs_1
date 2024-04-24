@@ -30,6 +30,7 @@ router.get("/",async(req,res)=>{
     }
 });
 
+
 router.get('/:workType',async (req,res)=>{
     try{
         const workType=req.params.workType;
@@ -81,6 +82,7 @@ router.delete('/:id',async(req,res)=>{
         res.status(500).json({error:err+"Internal server Error"})
     }
 })
+
 
 
 
