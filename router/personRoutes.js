@@ -2,8 +2,7 @@ const express=require('express');
 const Person = require('../models/Person');
 const router=express.Router()
 
-
-router.post('/',async(req,res)=>{
+router.post('/', async(req,res)=>{
     try{
         const data=req.body;
         const newPerson=new Person(data);
@@ -30,7 +29,6 @@ router.get("/",async(req,res)=>{
     }
 });
 
-
 router.get('/:workType',async (req,res)=>{
     try{
         const workType=req.params.workType;
@@ -47,6 +45,7 @@ router.get('/:workType',async (req,res)=>{
         res.status(505).json({error:"Internal Server Error"});
     }
 })
+
 router.put('/:id',async(req,res)=>{
     try{
         const personid=req.params.id;
@@ -82,9 +81,4 @@ router.delete('/:id',async(req,res)=>{
         res.status(500).json({error:err+"Internal server Error"})
     }
 })
-
-
-
-
-
 module.exports=router;
